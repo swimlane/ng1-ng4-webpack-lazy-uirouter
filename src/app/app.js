@@ -1,11 +1,5 @@
 import angular from 'angular';
 
-import 'angular-ui-router/release/angular-ui-router.js';
-import 'angular-ui-router/release/stateEvents.js';
-import 'ui-router-ng2';
-import 'ui-router-ng1-to-ng2';
-import 'ocLazyLoad';
-
 import { configRouting } from '../utils/configRouting.js';
 import { configLaziness } from '../utils/configLaziness.js';
 

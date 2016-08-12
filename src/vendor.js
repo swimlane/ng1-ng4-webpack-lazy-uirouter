@@ -12,3 +12,9 @@ import '@angular/common';
 
 // lazy stuff
 import 'ocLazyLoad';
+
+// routing
+import 'angular-ui-router/release/angular-ui-router.js';
+import 'angular-ui-router/release/stateEvents.js';
+import 'ui-router-ng2';
+import 'ui-router-ng1-to-ng2';

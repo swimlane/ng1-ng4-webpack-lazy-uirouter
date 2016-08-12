@@ -6,14 +6,14 @@ export const routes = {
   login: {
     url: '/login',
     resolve: function() {
-      return System.import('app/login/login.js');
+      return System.import('app/login/module.js');
     }
   },
 
   admin: {
     url: '/admin',
     resolve: function() {
-      return System.import('app/admin/admin.js');
+      return System.import('app/admin/module.js');
     }
   }
 
