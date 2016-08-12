@@ -23,7 +23,11 @@ export const configLaziness = [
 
         let compiler = $injector.get('ng2.Compiler');
 
+        console.log('Pre ng2 compile');
+
         adapter.compileNg2Components(compiler, componentFactoryRefMap);
+
+        console.log('Pre ocLazyLoad');
 
         $ocLazyLoad.load(newModule).then(function(){
           console.log('LOADED!');

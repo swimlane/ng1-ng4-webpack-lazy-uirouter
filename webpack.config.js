@@ -45,6 +45,7 @@ let webpackConfig = {
     watchOptions: {
       poll: true
     },
+    historyApiFallback: true,
     port: 9999,
     stats: {
       modules: false,
