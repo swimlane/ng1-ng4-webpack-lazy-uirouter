@@ -35,10 +35,9 @@ let webpackConfig = {
 
   output: {
     path: root('dist'),
-    publicPath: '/dist/',
-    filename: '[name].[hash].js',
-    sourceMapFilename: '[name].[hash].map',
-    chunkFilename: '[id].[hash].chunk.js'
+    filename: '[name].js',
+    sourceMapFilename: '[name].map',
+    chunkFilename: '[id].chunk.js'
   },
 
   devServer: {
@@ -55,7 +54,7 @@ let webpackConfig = {
   },
 
   resolve: {
-    extensions: ['', '.js'],
+    extensions: ['', '.js', '.html'],
     descriptionFiles: ['package.json'],
     root: root('src'),
     modules: [

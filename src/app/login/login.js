@@ -1,25 +1,13 @@
-import { Component, NgModule } from '@angular/core';
-
-//@NgModule({
-//  imports: [ AppModule ]
-//})
-@Component({
-  selector: 'app',
-  template: `
-    <h1>You made it</h1>
-  `
-})
-export class AppComponent {
-
-}
+import angular from 'angular';
 
 export default angular
-  .module('search', [])
-  .config(function($stateProvider) {
+  .module('login', [])
+  .config(function($stateProvider, $urlRouterProvider) {
     $stateProvider.state('login', {
       url: '/login',
-      views: {
-        $default: { component: AppComponent }
-      }
+      template: `
+        <h1>I'm a ng1 page</h1>
+        <a href="#" ui-sref="admin">Goto ng2 page</a>
+      `
     });
   });

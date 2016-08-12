@@ -6,7 +6,8 @@ import 'ui-router-ng2';
 import 'ui-router-ng1-to-ng2';
 import 'ocLazyLoad';
 
-import { configRouting, configLaziness } from '../utils/routing.js';
+import { configRouting } from '../utils/configRouting.js';
+import { configLaziness } from '../utils/configLaziness.js';
 
 let app = angular.module('app', [
   'ui.router',

@@ -1,26 +1,13 @@
-﻿import angular from 'angular';
+import angular from 'angular';
 import { adapter } from '../adapter.js';
 import { routes } from '../app/routes.js';
 
-export function configRouting($locationProvider, $urlMatcherFactoryProvider) {
-  $locationProvider.html5Mode({
-    enabled: true
-  });
+const services = [ '$q', '$state', '$ocLazyLoad', '$injector',
+  'ng2.ComponentFactoryRefMap' /* 'ng2.Compiler' */ ];
 
-  $urlMatcherFactoryProvider.caseInsensitive(true);
-  $urlMatcherFactoryProvider.strictMode(false);
-};
-
-const services = [ '$q', '$state', '$ocLazyLoad',
-  'ng2.Compiler', 'ng2.ComponentFactoryRefMap' ];
-
-/**
- * Lazy loading configurator
- * @type {Array}
- */
 export const configLaziness = [
   ...services,
-  ($q, $state, $ocLazyLoad, compiler, componentFactoryRefMap) => {
+  ($q, $state, $ocLazyLoad, $injector, componentFactoryRefMap) => {
 
     // Builds the state given the src
     function buildState(state) {
@@ -33,6 +20,8 @@ export const configLaziness = [
         if(!loaded.name) {
           newModule = loaded.default;
         }
+
+        let compiler = $injector.get('ng2.Compiler');
 
         adapter.compileNg2Components(compiler, componentFactoryRefMap);
 
