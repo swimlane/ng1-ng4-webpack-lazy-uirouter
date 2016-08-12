@@ -1,0 +1,68 @@
+{
+  "name": "ng1-ng2-webpack-lazy-uirouter",
+  "version": "1.0.0",
+  "description": "Example for Angular 1.x + Angular 2.0 + NgUpgrade + Webpack + Ui-Router with Lazy Loading!",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack --display-error-details",
+    "watch": "webpack --display-error-details --watch",
+    "profile": "webpack --profile --json > dist/stats.json",
+    "release": "NODE_ENV=production npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swimlane/ng1-ng2-webpack-lazy-uirouter.git"
+  },
+  "keywords": [
+    "angularjs",
+    "angular2",
+    "ui-router",
+    "webpack"
+  ],
+  "author": "Austin McDaniel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/swimlane/ng1-ng2-webpack-lazy-uirouter/issues"
+  },
+  "homepage": "https://github.com/swimlane/ng1-ng2-webpack-lazy-uirouter#readme",
+  "dependencies": {
+    "@angular/common": "2.0.0-rc.5",
+    "@angular/compiler": "2.0.0-rc.5",
+    "@angular/core": "2.0.0-rc.5",
+    "@angular/platform-browser": "2.0.0-rc.5",
+    "@angular/platform-browser-dynamic": "2.0.0-rc.5",
+    "@angular/upgrade": "2.0.0-rc.5",
+    "angular": "1.5.8",
+    "angular-ui-router": "1.0.0-beta.1",
+    "babel-polyfill": "^6.9.1",
+    "babel-runtime": "^6.11.6",
+    "core-js": "^2.4.1",
+    "ui-router-ng1-to-ng2": "1.0.10",
+    "ui-router-ng2": "1.0.0-beta.1",
+    "zone.js": "0.6.12",
+    "oclazyload": "1.0.9",
+    "rxjs": "5.0.0-beta.10"
+  },
+  "devDependencies": {
+    "babel-core": "6.13.2",
+    "babel-eslint": "6.1.2",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-external-helpers": "6.8.0",
+    "babel-plugin-transform-runtime": "^6.12.0",
+    "babel-preset-angular2": "0.0.2",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-stage-0": "6.5.0",
+    "chalk": "^1.1.3",
+    "clean-webpack-plugin": "^0.1.10",
+    "file-loader": "^0.9.0",
+    "html-webpack-plugin": "^2.22.0",
+    "html-loader": "^0.4.3",
+    "progress-bar-webpack-plugin": "^1.9.0",
+    "raw-loader": "^0.5.1",
+    "source-map-loader": "^0.1.5",
+    "url-loader": "^0.5.7",
+    "webpack": "2.1.0-beta.20",
+    "webpack-notifier": "^1.3.0"
+  }
+}

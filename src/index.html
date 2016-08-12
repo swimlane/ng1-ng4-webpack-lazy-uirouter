@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title page-title>Demo</title>
+    <meta name="application-name" content="Demo">
+
+    <!-- Disable translation prompt: Chrome -->
+    <meta name="google" value="notranslate">
+
+    <!-- Scaling -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- IE -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta http-equiv="cleartype" content="on">
+
+    <!-- Add to Home Screen: iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Demo">
+
+    <!-- Add to Home Screen: Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Bage Tags -->
+    <base href="/">
+    <!--[if IE]><script type="text/javascript">
+      (function() {
+        var baseTag = document.getElementsByTagName('base')[0];
+        baseTag.href = baseTag.href;
+      })();
+    </script><![endif]-->
+
+    <!-- Default Hiding -->
+    <style>
+      [ng\:cloak], [ng-cloak], [data-ng-cloak],[x-ng-cloak], .ng-cloak, .x-ng-cloak, .ng-hide, [hidden] {display: none !important;}
+    </style>
+</head>
+<body>
+
+  <noscript>
+    <div class="deprecation-warning">
+      <h1>Please enable Javascript</h1>
+      <p>
+        This app requires your browser to have Javascript enabled.
+        <a href="http://enable-javascript.com" target="_blank">Learn more</a>
+      </p>
+    </div>
+  </noscript>
+
+  <div id="app-container">
+    <ui-view class="content-area"></ui-view>
+  </div>
+
+</body>
+</html>
