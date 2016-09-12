@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { UpgradeAdapter } from '@angular/upgrade';
 
+import { UIRouterModule } from 'ui-router-ng2';
 import { uiRouterNgUpgrade } from 'ui-router-ng1-to-ng2';
-import { UIRouterModule } from './utils/routerModule.js';
 
 
-@NgModule({
-  imports: [BrowserModule, UIRouterModule]
+@UIRouterModule({
+  imports: [BrowserModule]
 })
 class Ng2AppModule { }
 

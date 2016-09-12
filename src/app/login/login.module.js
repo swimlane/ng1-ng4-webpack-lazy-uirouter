@@ -1,5 +1,5 @@
 import angular from 'angular';
-import { configState } from './state.js';
+import { configState } from './login.state.js';
 
 export default angular
   .module('login', [])

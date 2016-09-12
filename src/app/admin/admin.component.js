@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
-import { UIROUTER_DIRECTIVES } from 'ui-router-ng2';
 
 @Component({
-  // this will cause it to blow up
-  // directives: [UIROUTER_DIRECTIVES],
   template: `
     <h1>{{title}}</h1>
     <div ui-view="reset"></div>

@@ -1,6 +1,6 @@
 import angular from 'angular';
 import { adapter } from '../adapter.js';
-import { routes } from '../app/routes.js';
+import { FUTURE_STATES } from '../app/routes.js';
 
 const services = [ '$q', '$state', '$ocLazyLoad', '$injector',
   'ng2.ComponentFactoryRefMap' /* 'ng2.Compiler' */ ];
@@ -27,15 +27,21 @@ export const configLaziness = [
 
         adapter.compileNg2Components(compiler, componentFactoryRefMap);
 
-        console.log('Pre ocLazyLoad');
+        if(newModule) {
+          console.log('Pre ocLazyLoad');
 
-        $ocLazyLoad.load(newModule).then(function(){
-          console.log('LOADED!');
+          $ocLazyLoad.load(newModule).then(function(){
+            console.log('LOADED!');
+
+            def.resolve();
+          }, function(err) {
+            console.error('Error occurred!')
+            throw err;
+          });
+        } else {
+          console.log('Skip ocLazyLoad', loaded);
           def.resolve();
-        }, function(err) {
-          console.error('Error occurred!')
-          throw err;
-        });
+        }
       });
 
       return def.promise;
@@ -50,17 +56,23 @@ export const configLaziness = [
         .split('/');
 
       let state = undefined;
-      for(const key in routes) {
-        const route = routes[key];
+      for(const key in FUTURE_STATES) {
+        const route = FUTURE_STATES[key];
         if(route && route.url.indexOf(splits[0]) > -1) {
           state = route;
           break;
         }
       }
 
+      console.log('Otherwise Sync', state);
+
       if(state) {
         if(!$state.get(state.name)) {
+          console.log('Otherwise Not Found', state);
+
           buildState(state).then(() => {
+            console.log('Otherwise Loaded', state);
+
             $state.router.urlRouter.sync();
           });
         }
@@ -72,7 +84,9 @@ export const configLaziness = [
     // handle invalid state transitions
     $state.router.stateProvider.onInvalid(($to$, $from$, $state) => {
       const name = $to$.name();
-      const state = routes[name];
+      const state = FUTURE_STATES[name];
+
+      console.log('Invalid found', name);
 
       if(state) {
         const redirect = {
@@ -82,6 +96,8 @@ export const configLaziness = [
         };
 
         buildState(state).then(() => {
+          console.log('Invalid loaded', name);
+
           $state.go(redirect.to, redirect.toParams, redirect.options);
         });
       } else {
@@ -89,4 +105,5 @@ export const configLaziness = [
       }
     });
   }
+
 ];

@@ -1,20 +1,19 @@
 import { AdminComponent } from './admin.component.js';
 import { ResetComponent } from './reset/reset.component.js';
 
-export function configState($stateProvider) {
-
-  $stateProvider.state('admin', {
+export const ADMIN_STATES = [
+  {
+    name: 'admin',
     url: '/admin',
     views: {
       $default: { component: AdminComponent }
     }
-  });
-
-  $stateProvider.state('admin.reset', {
+  },
+  {
+    name: 'admin.reset',
     url: '/reset',
     views: {
       $default: { component: ResetComponent }
     }
-  });
-
-}
+  }
+];
