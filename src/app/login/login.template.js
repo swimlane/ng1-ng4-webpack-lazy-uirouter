@@ -3,4 +3,5 @@ export const loginTemplate  = `
   <div ui-view="hello"></div>
   <a href="#" class="button" ui-sref="login.hello">Goto ng1 substate</a>
   <a href="#" class="button" ui-sref="admin">Goto ng2 page</a>
+  <a href="#" class="button" ui-sref="dashboard">Goto ng2 + ng1 page</a>
 `;
