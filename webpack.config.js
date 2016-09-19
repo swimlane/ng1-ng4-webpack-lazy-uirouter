@@ -25,7 +25,7 @@ let webpackConfig = {
 
   devtool: IS_PRODUCTION ?
     'hidden-source-map' :
-    'cheap-module-eval-source-map',
+    'source-map',
 
   entry: {
     app: './src/bootstrap.js',
