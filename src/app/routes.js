@@ -1,17 +1,5 @@
-import { loadNgModule } from '../utils/lazyAdapter.js';
-
-function loadNg1Module(module) {
-  return (transition) => {
-    let $ocLazyLoad = transition.injector().get('$ocLazyLoad');
-
-    return new Promise((success, fail) => {
-      module.then(newModule => {
-        if(!newModule.name) newModule = newModule.default;
-        $ocLazyLoad.load(newModule).then(success, fail);
-      });
-    });
-  };
-}
+import { loadNg1Module } from '../utils/loadNg1Module.js';
+import { loadNg2Module } from '../utils/loadNg2Module.js';
 
 export const MAIN_STATES = [
   {
@@ -22,6 +10,6 @@ export const MAIN_STATES = [
   {
     name: 'admin',
     url: '/admin',
-    lazyLoad: loadNgModule(System.import('app/admin/admin.module.js'))
+    lazyLoad: loadNg2Module(System.import('app/admin/admin.module.js'))
   }
 ];
