@@ -1,4 +1,6 @@
 import angular from 'angular';
+import { loadNgModule } from 'ui-router-ng2';
+
 import { adapter } from '../adapter.js';
 import { FUTURE_STATES } from '../app/routes.js';
 
@@ -23,9 +25,9 @@ export const configLaziness = [
 
         let compiler = $injector.get('ng2.Compiler');
 
-        console.log('Pre ng2 compile');
+        console.log('Pre ng2 compile', adapter, compiler);
 
-        adapter.compileNg2Components(compiler, componentFactoryRefMap);
+        // adapter.compileNg2Components(compiler, componentFactoryRefMap);
 
         if(newModule) {
           console.log('Pre ocLazyLoad');
@@ -82,7 +84,7 @@ export const configLaziness = [
     });
 
     // handle invalid state transitions
-    $state.router.stateProvider.onInvalid(($to$, $from$, $state) => {
+    $state.router.stateProvider.onInvalid(($to$, $from$) => {
       const name = $to$.name();
       const state = FUTURE_STATES[name];
 

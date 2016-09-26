@@ -15,6 +15,13 @@ export const FUTURE_STATES = {
     resolve: function() {
       return System.import('app/admin/admin.module.js');
     }
+  },
+
+  dashboard: {
+    url: '/dashboard',
+    resolve: function() {
+      return System.import('app/dashboard/dashboard.module.js');
+    }
   }
 
 };
