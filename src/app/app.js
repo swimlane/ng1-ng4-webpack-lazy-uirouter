@@ -1,7 +1,5 @@
 import angular from 'angular';
-
 import { configRouting } from '../utils/configRouting.js';
-import { configLaziness } from '../utils/configLaziness.js';
 
 let app = angular.module('app', [
   'ui.router',
@@ -11,6 +9,5 @@ let app = angular.module('app', [
 ]);
 
 app.config(configRouting);
-app.run(configLaziness);
 
 export default app;
