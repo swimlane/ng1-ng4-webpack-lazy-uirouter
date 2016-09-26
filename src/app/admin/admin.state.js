@@ -1,6 +1,7 @@
 import { AdminComponent } from './admin.component.js';
 import { ResetComponent } from './reset/reset.component.js';
 import { AdminService } from '../services/admin.js';
+import { LoginService } from '../services/login.js';
 
 export const ADMIN_STATES = [
   {
@@ -9,12 +10,24 @@ export const ADMIN_STATES = [
     views: {
       $default: { component: AdminComponent }
     },
-    resolve: {
-      // status: function(adminService: AdminService) {
-      status: function() {
-        return 'blue';
+    resolve: [
+      {
+        token: 'geo',
+        deps: [AdminService],
+        resolveFn: function(adminService: AdminService) {
+          return adminService.get();
+        }
       }
-    }
+      /*
+      {
+        token: 'status',
+        deps: [LoginService],
+        resolveFn: function(loginService: LoginService) {
+          return loginService.get();
+        }
+      }
+      */
+    ]
   },
   {
     name: 'admin.reset',

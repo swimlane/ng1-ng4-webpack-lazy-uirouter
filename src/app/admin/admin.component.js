@@ -2,8 +2,8 @@ import { Component, Input } from '@angular/core';
 
 @Component({
   template: `
-    <h1>{{title}}</h1>
-    <p>status: {{status}}</p>
+    <h1>{{title}} + {{status}}</h1>
+    <pre>{{geoFormatted}}</pre>
     <img src="https://media.giphy.com/media/NMuaDOlkCOvJe/giphy.gif" width="150" height="150" />
     <div ui-view="reset"></div>
     <hr />
@@ -15,7 +15,12 @@ import { Component, Input } from '@angular/core';
 })
 export class AdminComponent {
 
+  @Input() geo = '';
   @Input() status = '';
+
+  get geoFormatted() {
+    return JSON.stringify(this.geo, null, 4);
+  }
 
   title = `I'm a ng2 component`;
 

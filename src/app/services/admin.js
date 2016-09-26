@@ -7,4 +7,8 @@ export class AdminService {
     this.$http = $http;
   }
 
+  get() {
+    return this.$http.get('http://ip-api.com/json/');
+  }
+
 }
