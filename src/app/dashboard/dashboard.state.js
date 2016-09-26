@@ -1,6 +1,6 @@
 import { DashboardComponent } from './dashboard.component.js';
 
-export function configure($stateProvider) {
+export function configState($stateProvider) {
   $stateProvider.state('dashboard', {
     url: '/dashboard',
     views: {

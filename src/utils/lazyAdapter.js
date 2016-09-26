@@ -57,9 +57,18 @@
        return ng2Injector.get(NgModuleFactoryLoader).load(loadChildren);
      } else {
       const compiler: Compiler = ng2Injector.get(Compiler);
+      return loadChildren.then(moduleType => {
+        return compiler.compileModuleAsync(moduleType.default);
+      });
+
+      /*
       const offlineMode = compiler instanceof Compiler;
       const loadChildrenPromise = Promise.resolve(loadChildren());
-      return offlineMode ? loadChildrenPromise : loadChildrenPromise.then(moduleType => compiler.compileModuleAsync(moduleType))
+
+      return offlineMode ? loadChildrenPromise : loadChildrenPromise.then(moduleType => {
+        compiler.compileModuleAsync(moduleType.default);
+      });
+      */
      }
    }
 
@@ -70,7 +79,7 @@
     * - Find the correct NgModuleFactory
     * - Create the new NgModule
     */
-   const createNg2Module = ( moduleToLoad, ng2Injector) =>
+   const createNg2Module = (moduleToLoad, ng2Injector) =>
        loadModuleFactory(moduleToLoad, ng2Injector).then((factory) =>
            factory.create(ng2Injector));
 
