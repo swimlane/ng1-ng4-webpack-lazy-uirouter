@@ -36,8 +36,6 @@
   * returns the new states array
   */
  export function loadNgModule(moduleToLoad) {
-   console.log('MODUILE!!!', moduleToLoad);
-   
    /** Get the parent NgModule Injector (from resolves) */
    const getNg2Injector = (transition) =>
        transition.injector().getAsync(NATIVE_INJECTOR_TOKEN);

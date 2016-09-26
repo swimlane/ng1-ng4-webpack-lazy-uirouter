@@ -11,8 +11,10 @@ import { MAIN_STATES } from './app/routes.js';
 @NgModule({
   imports: [
     BrowserModule,
-    Ng1ToNg2Module,
-    UIRouterModule.forChild({ states: MAIN_STATES })
+    Ng1ToNg2Module
+    
+    // this doesn't work ...
+    // UIRouterModule.forChild({ states: MAIN_STATES })
   ]
 })
 class AppModule { }
