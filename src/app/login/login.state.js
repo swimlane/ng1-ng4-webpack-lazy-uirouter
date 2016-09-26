@@ -12,6 +12,11 @@ export function configState($stateProvider, $urlRouterProvider) {
         controller: LoginController,
         template: loginTemplate
       }
+    },
+    resolve: {
+      profile: function(LoginService) {
+        return LoginService.get();
+      }
     }
   });
 

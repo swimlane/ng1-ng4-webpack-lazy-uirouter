@@ -1,7 +1,12 @@
 import angular from 'angular';
-import { MAIN_STATES } from '../app/routes.js';
+import { MAIN_STATES } from '../app/states.js';
 
-export function configRouting($locationProvider, $stateProvider, $urlMatcherFactoryProvider, $urlRouterProvider) {
+export function configRouting(
+  $locationProvider,
+  $stateProvider,
+  $urlMatcherFactoryProvider,
+  $urlRouterProvider) {
+
   $locationProvider.html5Mode({
     enabled: true
   });
@@ -14,4 +19,5 @@ export function configRouting($locationProvider, $stateProvider, $urlMatcherFact
   });
 
   MAIN_STATES.forEach(state => $stateProvider.state(state));
+  
 };
