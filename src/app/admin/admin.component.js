@@ -4,7 +4,8 @@ import { Component } from '@angular/core';
   template: `
     <h1>{{title}}</h1>
     <div ui-view="reset"></div>
-
+    <hr />
+    
     <a href="#" class="button" uiSref="admin.reset">Goto ng2 substate</a>
     <a href="#" class="button" uiSref="login">Goto ng1 page</a>
     <a href="#" class="button" uiSref="login.hello">Goto ng1 substate</a>

@@ -23,10 +23,5 @@ export const MAIN_STATES = [
     name: 'admin',
     url: '/admin',
     lazyLoad: loadNgModule(System.import('app/admin/admin.module.js'))
-  },
-  {
-    name: 'dashboard',
-    url: '/dashboard',
-    lazyLoad: loadNg1Module(System.import('app/dashboard/dashboard.module.js'))
   }
 ];

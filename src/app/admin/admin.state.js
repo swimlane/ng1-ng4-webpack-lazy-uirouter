@@ -13,7 +13,7 @@ export const ADMIN_STATES = [
     name: 'admin.reset',
     url: '/reset',
     views: {
-      $default: { component: ResetComponent }
+      'reset': { component: ResetComponent }
     }
   }
 ];
