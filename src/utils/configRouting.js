@@ -1,5 +1,5 @@
 import angular from 'angular';
-import { MAIN_STATES } from '../app/states.js';
+import { MAIN_STATES } from '../app';
 
 export function configRouting(
   $locationProvider,
@@ -19,5 +19,5 @@ export function configRouting(
   });
 
   MAIN_STATES.forEach(state => $stateProvider.state(state));
-  
+
 };

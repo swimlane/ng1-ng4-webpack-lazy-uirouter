@@ -18,7 +18,7 @@
   *
   * Remove soon!
   */
- export function loadNg2Module(moduleToLoad) {
+ export function loadNgModule(moduleToLoad) {
    const getNg2Injector = (transition) =>
        transition.injector().getAsync(NATIVE_INJECTOR_TOKEN);
 

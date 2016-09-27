@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { UpgradeAdapter } from '@angular/upgrade';
+// import { AdminService } from 'app/services/admin.js';
 
 import { UIRouterModule } from 'ui-router-ng2';
 import { uiRouterNgUpgrade, Ng1ToNg2Module } from 'ui-router-ng1-to-ng2';
 
 @NgModule({
   imports: [BrowserModule, Ng1ToNg2Module]
+  // providers: [AdminService]
 })
-class AppModule { }
+export class AppModule { }
 
 // Create ngUpgrade Adapter
 export const adapter = new UpgradeAdapter(AppModule);
