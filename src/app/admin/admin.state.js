@@ -1,7 +1,6 @@
 import { AdminComponent } from './admin.component.js';
 import { ResetComponent } from './reset/reset.component.js';
-import { AdminService } from '../services/admin.js';
-import { LoginService } from '../services/login.js';
+import { AdminService, LoginService } from 'app/services';
 
 export const ADMIN_STATES = [
   {

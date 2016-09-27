@@ -1,13 +1,11 @@
 import angular from 'angular';
-import { configRouting } from '../utils/configRouting.js';
+import { configRouting } from 'utils';
 
-let app = angular.module('app', [
-  'ui.router',
-  'ui.router.state.events',
-  'ui.router.upgrade',
-  'oc.lazyLoad'
-]);
-
-app.config(configRouting);
-
-export default app;
+export const appModule = angular
+  .module('app', [
+    'ui.router',
+    'ui.router.state.events',
+    'ui.router.upgrade',
+    'oc.lazyLoad'
+  ])
+  .config(configRouting);

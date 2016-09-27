@@ -1,6 +1,6 @@
 import { adapter } from './adapter.js';
-import app from './app';
+import { appModule } from 'app';
 
 document.addEventListener('DOMContentLoaded', () => {
-  adapter.bootstrap(document.body, [app.name]);
+  adapter.bootstrap(document.body, [appModule.name]);
 });

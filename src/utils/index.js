@@ -1,4 +1,6 @@
 export * from './loadNg1Module.js';
+export * from './configRouting.js';
+
 import { loadNgModule } from './loadNg2Module.js';
 
 // This simplifies using `loadNgModule`

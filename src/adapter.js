@@ -1,22 +1,16 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { UpgradeAdapter } from '@angular/upgrade';
+import { uiRouterNgUpgrade } from 'ui-router-ng1-to-ng2';
+import { UpgradeModule } from 'app';
+
 // import { AdminService } from 'app/services/admin.js';
-
-import { UIRouterModule } from 'ui-router-ng2';
-import { uiRouterNgUpgrade, Ng1ToNg2Module } from 'ui-router-ng1-to-ng2';
-
-@NgModule({
-  imports: [BrowserModule, Ng1ToNg2Module]
-  // providers: [AdminService]
-})
-export class AppModule { }
+// import { LoginService } from 'app/services/login.js';
 
 // Create ngUpgrade Adapter
-export const adapter = new UpgradeAdapter(AppModule);
+export const adapter = new UpgradeAdapter(UpgradeModule);
 
 // Bootstrap ui-router
 uiRouterNgUpgrade.setUpgradeAdapter(adapter);
 
-// Just a demo scenario
+// Upgrade some services
 adapter.upgradeNg1Provider('$http');
+// adapter.upgradeNg1Provider('LoginService', { asToken: LoginService });
