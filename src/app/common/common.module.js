@@ -1,5 +1,5 @@
-import { AdminService } from './admin.service.js';
-import { LoginService } from './login.service.js';
+import { AdminService } from './services/admin.service.js';
+import { LoginService } from './services/login.service.js';
 
 export let commonModule = angular
   .module('common', [])

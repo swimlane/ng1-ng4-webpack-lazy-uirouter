@@ -1,3 +1,3 @@
 export * from './common.module.js';
-export * from './admin.service.js';
-export * from './login.service.js';
+export * from './services/admin.service.js';
+export * from './services/login.service.js';
