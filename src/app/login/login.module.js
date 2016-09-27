@@ -1,11 +1,7 @@
 import angular from 'angular';
-// import { adapter } from 'adapter.js';
-
 import { configState } from './login.state.js';
-import { LoginService, AdminService } from 'app/services';
+import { commonModule } from 'app/common';
 
 export default angular
-  .module('login', [])
+  .module('login', [ commonModule.name ])
   .config(configState)
-  .factory('LoginService', LoginService)
-  // .factory('AdminService', adapter.downgradeNg2Provider(AdminService))

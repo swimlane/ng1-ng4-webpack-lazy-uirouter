@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 
 @Component({
   template: `
-    <h1>{{title}} + {{status}}</h1>
+    <h1>{{title}} + {{profile.status}}</h1>
     <pre>{{geoFormatted}}</pre>
     <img src="https://media.giphy.com/media/NMuaDOlkCOvJe/giphy.gif" width="150" height="150" />
     <div ui-view="reset"></div>
@@ -16,7 +16,7 @@ import { Component, Input } from '@angular/core';
 export class AdminComponent {
 
   @Input() geo = '';
-  @Input() status = '';
+  @Input() profile = '';
 
   get geoFormatted() {
     return JSON.stringify(this.geo, null, 4);
