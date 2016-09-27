@@ -1,9 +1,9 @@
 export class LoginController {
 
-  constructor($scope, profile) {
+  constructor($scope, profile, geo) {
     $scope.title = `I'm a ng1 page!`;
-    $scope.profile = profile.status;
-    // $scope.geo = geo;
+    $scope.status = profile.status;
+    $scope.geo = geo.data;
   }
 
 }

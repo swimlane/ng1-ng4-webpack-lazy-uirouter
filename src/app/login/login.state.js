@@ -16,12 +16,10 @@ export function configState($stateProvider, $urlRouterProvider) {
     resolve: {
       profile: function(LoginService) {
         return LoginService.get();
-      }
-      /*
+      },
       geo: function(AdminService) {
         return AdminService.get();
       }
-      */
     }
   });
 
