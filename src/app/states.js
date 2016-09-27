@@ -10,6 +10,8 @@ export const MAIN_STATES = [
   {
     name: 'admin',
     url: '/admin',
-    lazyLoad: loadNg2Module(System.import('app/admin/admin.module.js'))
+    // https://github.com/angular-ui/ui-router/pull/3037
+    lazyLoad: loadNg2Module(() =>
+      System.import('app/admin/admin.module.js').then(m => m.default))
   }
 ];

@@ -26,10 +26,10 @@
      if(typeof(loadChildren) === 'string'){
        return ng2Injector.get(NgModuleFactoryLoader).load(loadChildren);
      } else {
-      const compiler: Compiler = ng2Injector.get(Compiler);
-      return loadChildren.then(moduleType => {
-        return compiler.compileModuleAsync(moduleType.default);
-      });
+       const compiler: Compiler = ng2Injector.get(Compiler);
+       const offlineMode = compiler instanceof Compiler;
+       const loadChildrenPromise = Promise.resolve(loadChildren());
+       return offlineMode ? loadChildrenPromise : loadChildrenPromise.then( moduleType => compiler.compileModuleAsync(moduleType))
      }
    }
 
