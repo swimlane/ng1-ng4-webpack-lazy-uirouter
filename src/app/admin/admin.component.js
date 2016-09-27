@@ -4,6 +4,9 @@ import { Component, Input } from '@angular/core';
   template: `
     <h1>{{title}} + {{profile.status}}</h1>
     <pre>{{geoFormatted}}</pre>
+
+    <cool-toggle></cool-toggle>
+    <cool-button></cool-button>
     <img src="https://media.giphy.com/media/NMuaDOlkCOvJe/giphy.gif" width="150" height="150" />
     <div ui-view="reset"></div>
     <hr />
