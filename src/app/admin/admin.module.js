@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { UIRouterModule } from 'ui-router-ng2';
-import { CommonNg2Module } from 'app/common/commonng2.module.js';
+import { CommonNg2Module } from 'app/common';
 
 import { ADMIN_STATES } from './admin.state.js';
 import { AdminComponent } from './admin.component.js';

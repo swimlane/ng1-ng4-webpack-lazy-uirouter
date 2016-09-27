@@ -1,7 +1,7 @@
 import angular from 'angular';
 import { configState } from './login.state.js';
-import { commonModule } from 'app/common';
+import { commonNg1Module } from 'app/common';
 
 export default angular
-  .module('login', [ commonModule.name ])
+  .module('login', [ commonNg1Module.name ])
   .config(configState)

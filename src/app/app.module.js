@@ -1,6 +1,6 @@
 import angular from 'angular';
 import { configRouting } from 'utils';
-import { commonModule } from 'app/common';
+import { commonNg1Module } from 'app/common';
 
 export const appModule = angular
   .module('app', [
@@ -8,6 +8,6 @@ export const appModule = angular
     'ui.router.state.events',
     'ui.router.upgrade',
     'oc.lazyLoad',
-    commonModule.name
+    commonNg1Module.name
   ])
   .config(configRouting);

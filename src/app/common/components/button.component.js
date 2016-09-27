@@ -2,16 +2,16 @@ import angular from 'angular';
 
 export const ButtonComponent = {
 
-  template: `
-    <button type="button">ng1 component - {{age}}</button>
-  `,
-
   bindings: {
-    age: '<'
+    age: '='
   },
 
+  template: `
+    <button type="button">ng1 component - {{$ctrl.age}}</button>
+  `,
+
   controller($scope) {
-    $scope.age = 1;
+    // console.log('ng1', $scope, this)
   }
 
-}
+};
