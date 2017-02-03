@@ -43,9 +43,9 @@
     "core-js": "^2.4.1",
     "oclazyload": "1.0.9",
     "rxjs": "5.0.0-beta.12",
-    "angular-ui-router": "^1.0.0-beta.3",
-    "ui-router-ng2": "^1.0.0-beta.3",
-    "ui-router-ng1-to-ng2": "^1.0.12",
+    "angular-ui-router": "1.0.0-beta.3",
+    "ui-router-ng2": "1.0.0-beta.3",
+    "ui-router-ng1-to-ng2": "1.0.15",
     "zone.js": "^0.6.25"
   },
   "devDependencies": {
