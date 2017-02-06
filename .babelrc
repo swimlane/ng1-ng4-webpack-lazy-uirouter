@@ -7,8 +7,6 @@
   "plugins": [
     "transform-runtime"
   ],
-  "moduleIds": false,
   "comments": true,
-  "compact": false,
   "sourceMaps": true
 }

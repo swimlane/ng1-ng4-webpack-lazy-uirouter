@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { UIRouterModule } from 'ui-router-ng2';
 import { Transition } from 'ui-router-ng2';
-import { CommonNg2Module } from 'app/common';
+import { CommonNg2Module } from '../common';
 
 import { ADMIN_STATES } from './admin.state.js';
 import { AdminComponent } from './admin.component.js';
