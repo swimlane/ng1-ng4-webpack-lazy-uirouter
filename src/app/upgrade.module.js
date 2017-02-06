@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Ng1ToNg2Module } from 'ui-router-ng1-to-ng2';
-import { CommonNg2Module } from './common';
+import { CommonNg2Module } from './common/common-ng2.module.js';
 
 @NgModule({
   imports: [

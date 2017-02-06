@@ -55,7 +55,12 @@ let webpackConfig = {
     modules: [
       root('src'),
       'node_modules'
-    ]
+    ],
+    alias: {
+      'angular-ui-router': 'angular-ui-router/release/angular-ui-router.js',
+      'ui-router-ng2': 'ui-router-ng2/_bundles/ui-router-ng2.js',
+      'ui-router-ng1-to-ng2': 'ui-router-ng1-to-ng2/ng1-to-ng2.js'
+    }
   },
 
   module: {
@@ -103,7 +108,11 @@ let webpackConfig = {
       // The (\\|\/) piece accounts for path separators in *nix and Windows
       /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
       root('src') // location of your src
-    )
+    ),
+
+    new webpack.LoaderOptionsPlugin({
+      debug: true
+    })
   ]
 };
 
