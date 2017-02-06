@@ -1,7 +1,7 @@
 import { AdminComponent } from './admin.component.js';
 import { ResetComponent } from './reset/reset.component.js';
 import { AdminService, LoginService } from 'app/common';
-import { Transition } from 'ui-router-ng2';
+import { TransitionService, StateService } from 'ui-router-ng2';
 
 export const ADMIN_STATES = [
   {
@@ -20,10 +20,9 @@ export const ADMIN_STATES = [
       },
       {
         token: 'profile',
-        deps: [LoginService, Transition],
-        resolveFn: function(loginService: LoginService, trans: Transition) {
-          debugger;
-          console.log('trans', trans);
+        deps: [LoginService, TransitionService, StateService],
+        resolveFn: function(loginService: LoginService, trans: TransitionService, state: StateService) {
+          console.log('Services', trans, state);
           return loginService.get();
         }
       }
