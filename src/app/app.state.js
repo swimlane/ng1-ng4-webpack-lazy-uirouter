@@ -4,7 +4,7 @@ export const MAIN_STATES = [
   {
     name: 'login',
     url: '/login',
-    loadChildren: loadNg1Module(() => System.import('app/login/login.module.js'))
+    lazyload: loadNg1Module(() => System.import('app/login/login.module.js'))
   },
   {
     name: 'admin',
