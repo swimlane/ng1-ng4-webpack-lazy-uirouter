@@ -13,6 +13,5 @@ import { ResetComponent } from './reset/reset.component.js';
     CommonNg2Module
   ],
   declarations: [AdminComponent, ResetComponent],
-  providers: [Transition]
 })
 export default class AdminModule { }
