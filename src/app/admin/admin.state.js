@@ -22,7 +22,6 @@ export const ADMIN_STATES = [
         token: 'profile',
         deps: [LoginService, Transition],
         resolveFn: function(loginService: LoginService, trans: Transition) {
-          debugger;
           console.log('trans', trans);
           return loginService.get();
         }
