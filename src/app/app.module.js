@@ -11,3 +11,5 @@ export const appModule = angular
     commonNg1Module.name
   ])
   .config(configRouting);
+
+appModule.run($trace => $trace.enable());

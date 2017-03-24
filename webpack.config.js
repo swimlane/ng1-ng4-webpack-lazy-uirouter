@@ -57,20 +57,20 @@ let webpackConfig = {
       'node_modules'
     ],
     alias: {
-      'angular-ui-router': 'angular-ui-router/release/angular-ui-router.js',
-      'ui-router-ng2': 'ui-router-ng2/_bundles/ui-router-ng2.js',
-      'ui-router-ng1-to-ng2': 'ui-router-ng1-to-ng2/ng1-to-ng2.js'
+      // 'angular-ui-router': 'angular-ui-router/release/angular-ui-router.js',
+      // 'ui-router-ng2': 'ui-router-ng2/_bundles/ui-router-ng2.js',
+      // 'ui-router-ng1-to-ng2': 'ui-router-ng1-to-ng2/ng1-to-ng2.js'
     }
   },
 
   module: {
     exprContextCritical: false,
     rules: [
-      {
-        enforce: 'pre',
-        test: /\.js$/,
-        loader: 'source-map-loader'
-      },
+      // {
+        // enforce: 'pre',
+        // test: /\.js$/,
+        // loader: 'source-map-loader'
+      // },
       {
         test: /\.js$/,
         loader: 'babel-loader',
