@@ -4,9 +4,6 @@ var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
-var WebpackNotifierPlugin = require('webpack-notifier');
-var ProgressBarPlugin = require('progress-bar-webpack-plugin');
-var chalk = require('chalk');
 
 var ENV = process.env.NODE_ENV;
 var IS_PRODUCTION = ENV === 'production';
@@ -20,8 +17,6 @@ function root(args) {
 let webpackConfig = {
 
   context: root(),
-
-  debug: !IS_PRODUCTION,
 
   devtool: IS_PRODUCTION ?
     'hidden-source-map' :
@@ -41,10 +36,6 @@ let webpackConfig = {
   },
 
   devServer: {
-    outputPath: root('dist'),
-    watchOptions: {
-      poll: true
-    },
     historyApiFallback: true,
     port: 9999,
     stats: {
@@ -54,34 +45,41 @@ let webpackConfig = {
     }
   },
 
+  performance: {
+    hints: false
+  },
+
   resolve: {
-    extensions: ['', '.js', '.html'],
+    extensions: ['.js', '.html'],
     descriptionFiles: ['package.json'],
-    root: root('src'),
     modules: [
       root('src'),
       'node_modules'
-    ]
+    ],
+    alias: {
+      // 'angular-ui-router': 'angular-ui-router/release/angular-ui-router.js',
+      // 'ui-router-ng2': 'ui-router-ng2/_bundles/ui-router-ng2.js',
+      // 'ui-router-ng1-to-ng2': 'ui-router-ng1-to-ng2/ng1-to-ng2.js'
+    }
   },
 
   module: {
-    preLoaders: [
+    exprContextCritical: false,
+    rules: [
+      // {
+        // enforce: 'pre',
+        // test: /\.js$/,
+        // loader: 'source-map-loader'
+      // },
       {
         test: /\.js$/,
-        loader: 'source-map'
-      }
-    ],
-    loaders: [
-      {
-        test: /\.js$/,
-        loader: 'babel?cacheDirectory',
+        loader: 'babel-loader',
         exclude: /(node_modules)/
       }
     ]
   },
 
   plugins: [
-
     new webpack.optimize.CommonsChunkPlugin({
       name: ['vendor', 'polyfills'],
       minChunks: Infinity
@@ -112,12 +110,8 @@ let webpackConfig = {
       root('src') // location of your src
     ),
 
-    new WebpackNotifierPlugin({
-      alwaysNotify: true
-    }),
-
-    new ProgressBarPlugin({
-      format: chalk.yellow.bold('Webpack Building...') + ' [:bar] ' + chalk.green.bold(':percent') + ' (:elapsed seconds)'
+    new webpack.LoaderOptionsPlugin({
+      debug: true
     })
   ]
 };

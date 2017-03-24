@@ -1,3 +1,5 @@
+import angular from 'angular';
+
 export function loadNg1Module(getModule) {
   return (transition) => {
     let $ocLazyLoad = transition.injector().get('$ocLazyLoad');

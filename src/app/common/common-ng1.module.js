@@ -6,7 +6,7 @@ import { ToggleComponent } from './components/toggle.component.js';
 
 // ng1 components & services
 import { ButtonComponent } from './components/button.component.js';
-import { LoginService } from 'app/common/services/login.service.js';
+import { LoginService } from './services/login.service.js';
 
 export let commonNg1Module = angular
   .module('common', [])
