@@ -4,9 +4,9 @@ This is a demo project of lazy-loading both Angular1 AND Angular2 states with ui
 and bundling them with Webpack2!
 
 Under the hood this uses:
-- Angular 2.0.1
+- Angular 4.0.1
 - Angular ~1.5.x
-- UI-Router 1 Beta
+- UI-Router
 - Angular2 NgUpgrade
 - ocLazyLoad
 - Webpack2
