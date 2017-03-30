@@ -59,7 +59,7 @@ let webpackConfig = {
     alias: {
       // 'angular-ui-router': 'angular-ui-router/release/angular-ui-router.js',
       // 'ui-router-ng2': 'ui-router-ng2/_bundles/ui-router-ng2.js',
-      // 'ui-router-ng1-to-ng2': 'ui-router-ng1-to-ng2/ng1-to-ng2.js'
+      'ui-router-ng1-to-ng2': 'ui-router-ng1-to-ng2/ng1-to-ng2.js'
     }
   },
 

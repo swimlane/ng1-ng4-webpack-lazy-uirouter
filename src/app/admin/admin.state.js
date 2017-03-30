@@ -6,7 +6,7 @@ import { TransitionService, StateService } from 'ui-router-ng2';
 export const ADMIN_STATES = [
   {
     name: 'admin',
-    url: '/admin/:id',
+    url: '/admin',
     views: {
       $default: { component: AdminComponent }
     },
