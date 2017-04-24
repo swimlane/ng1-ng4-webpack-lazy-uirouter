@@ -1,4 +1,4 @@
-import { loadNg1Module } from '../utils/loadNg1Module';
+import { loadNg1Module } from '../utils/load-ng1-module';
 
 export const MAIN_STATES = [
   {

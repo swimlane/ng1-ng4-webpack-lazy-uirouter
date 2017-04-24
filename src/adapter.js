@@ -2,7 +2,7 @@ import { forwardRef } from '@angular/core';
 import { UpgradeAdapter } from '@angular/upgrade';
 import { uiRouterNgUpgrade } from 'ui-router-ng1-to-ng2';
 
-// ng2 services
+// ng4 services
 
 // Create ngUpgrade Adapter
 // ---

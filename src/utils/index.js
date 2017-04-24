@@ -1,2 +1,2 @@
-export * from './loadNg1Module';
-export * from './configRouting';
+export * from './load-ng1-module';
+export * from './config-routing';

@@ -1,16 +1,16 @@
-# ng1-ng2-webpack-lazy-uirouter
+# angular-hybrid-demo
 
-This is a demo project of lazy-loading both Angular1 AND Angular2 states with ui-router
-and bundling them with Webpack2!
+This is a demo project of lazy-loading both AngularJS AND Angular states with ui-router
+and bundling them with Webpack!
 
 Under the hood this uses:
-- Angular 4.0.1
-- Angular ~1.5.x
+- Angular 4.x
+- AngularJS ~1.5.x
 - UI-Router
-- Angular2 NgUpgrade
+- Angular NgUpgrade 4.x
 - ocLazyLoad
-- Webpack2
-- Babel 6
+- Webpack 2.x
+- TypeScript 2.x
 
 ## Running
 - `npm i`
@@ -22,21 +22,21 @@ Under the hood this uses:
 ```
 ├── app
 │   ├── admin - ng2 component module
-│   │   ├── admin.component.js - ng2 module for admin state
-│   │   ├── admin.module.js - ng2 primary component for admin state
-│   │   ├── admin.state.js - State definitions for admin state
+│   │   ├── admin.component.ts - ng2 module for admin state
+│   │   ├── admin.module.ts - ng2 primary component for admin state
+│   │   ├── admin.state.ts - State definitions for admin state
 │   │   └── reset  - ng2 sub-state component
-│   │       └── reset.component.js - ng2 component
+│   │       └── reset.component.ts - ng2 component
 │   │
 │   ├── common - ng1/ng2 common modules
 │   │   ├── common-ng1.module.js - ng1 common module (includes downgraded ng2)
-│   │   ├── common-ng2.module.js - ng2 common module (includes upgraded ng1)
+│   │   ├── common-ng2.module.ts - ng2 common module (includes upgraded ng1)
 │   │   ├── components
 │   │   │   ├── button.component.js - ng1 component
-│   │   │   └── toggle.component.js - ng2 component
+│   │   │   └── toggle.component.ts - ng2 component
 │   │   └── services
 │   │       ├── admin.service.js - ng2 service
-│   │       └── login.service.js - ng1 service
+│   │       └── login.service.ts - ng1 service
 │   │
 │   ├── login - ng1 component module
 │   │   ├── hello - ng1 subview component
@@ -53,9 +53,8 @@ Under the hood this uses:
 │   └── upgrade.module.js - ng2 upgrade module
 │
 ├── utils
-│   ├── configRouting.js - Basic config for our ui-router
-│   ├── loadNg1Module.js - ocLazyLoad wrapper inside of ui-router transition callback
-│   └── loadNg2Module.js - Magic that lazy-loads ng2 stuff, this will be in ui-router next release
+│   ├── config-routing.js - Basic config for our ui-router
+│   ├── load-ng1-module.js - ocLazyLoad wrapper inside of ui-router transition callback
 │
 ├── adapter.js - angular upgrade adapter
 ├── bootstrap.js - bootstrap ng1 module via adapter
@@ -111,9 +110,7 @@ If you use the system-js loader plugin, you can accomplish the later but for thi
 we do not do that.
 
 Looking at `./app/app.state.js` we see I have some `System.import`s wrapped in 2 different
-functions. The first function (`loadNg1Module`) is a Angular1 helper that calls `./utils/loadNg1Module.js` function
+functions. The first function (`loadNg1Module`) is a Angular1 helper that calls `./utils/load-ng1-module.js` function
 that when invoked will pass the resolve promise from the import to ocLazyLoad to recursively
-resolve and register all our ng1 modules. Next there is a function called `loadNg2Default` which is
-really just a wrapper around `loadNgModule` in `./utils/loadNg2Module.js`. This wrapper just
-resolves the default module from the import and passes it to `loadNgModule` which is internal
-code to ui-router to do ng2 lazy-loading.
+resolve and register all our ng1 modules. `loadChildren` in will lazy-load the Angular modules
+for us.
