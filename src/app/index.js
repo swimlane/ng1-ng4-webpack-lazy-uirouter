@@ -1,3 +1,3 @@
-export * from './app.module.js';
-export * from './upgrade.module.js';
-export * from './app.state.js';
+export * from './app.module';
+export * from './upgrade.module';
+export * from './app.state';

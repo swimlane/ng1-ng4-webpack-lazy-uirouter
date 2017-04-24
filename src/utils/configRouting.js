@@ -1,5 +1,5 @@
 import angular from 'angular';
-import { MAIN_STATES } from '../app/app.state.js';
+import { MAIN_STATES } from '../app/app.state';
 
 export function configRouting(
   $locationProvider,

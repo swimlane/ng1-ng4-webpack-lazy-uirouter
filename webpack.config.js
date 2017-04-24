@@ -4,6 +4,7 @@ var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CheckerPlugin } = require('awesome-typescript-loader')
 
 var ENV = process.env.NODE_ENV;
 var IS_PRODUCTION = ENV === 'production';
@@ -50,7 +51,7 @@ let webpackConfig = {
   },
 
   resolve: {
-    extensions: ['.js', '.html'],
+    extensions: ['.ts', '.js', '.html'],
     descriptionFiles: ['package.json'],
     modules: [
       root('src'),
@@ -66,14 +67,21 @@ let webpackConfig = {
   module: {
     exprContextCritical: false,
     rules: [
-      // {
-        // enforce: 'pre',
-        // test: /\.js$/,
-        // loader: 'source-map-loader'
-      // },
+      /*
+      {
+        enforce: 'pre',
+        test: /\.js$/,
+        loader: 'source-map-loader'
+      },
       {
         test: /\.js$/,
         loader: 'babel-loader',
+        exclude: /(node_modules)/
+      },
+      */
+      {
+        test: /\.js$|\.ts$/,
+        loader: 'awesome-typescript-loader',
         exclude: /(node_modules)/
       }
     ]
@@ -103,12 +111,7 @@ let webpackConfig = {
       'VERSION': VERSION
     }),
 
-    // https://github.com/angular/angular/issues/11580#issuecomment-246880731
-    new webpack.ContextReplacementPlugin(
-      // The (\\|\/) piece accounts for path separators in *nix and Windows
-      /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
-      root('src') // location of your src
-    ),
+    new CheckerPlugin(),
 
     new webpack.LoaderOptionsPlugin({
       debug: true

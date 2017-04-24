@@ -1,6 +1,6 @@
 import angular from 'angular';
-import { configRouting } from '../utils/configRouting.js';
-import { commonNg1Module } from './common/common-ng1.module.js';
+import { configRouting } from '../utils/configRouting';
+import { commonNg1Module } from './common/common-ng1.module';
 import Visualizer from 'ui-router-visualizer';
 
 export const appModule = angular
