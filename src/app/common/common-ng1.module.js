@@ -1,12 +1,12 @@
-import { adapter } from 'adapter.js';
+import { adapter } from 'adapter';
 
 // ng2 services & components
-import { AdminService } from './services/admin.service.js';
-import { ToggleComponent } from './components/toggle.component.js';
+import { AdminService } from './services/admin.service';
+import { ToggleComponent } from './components/toggle.component';
 
 // ng1 components & services
-import { ButtonComponent } from './components/button.component.js';
-import { LoginService } from './services/login.service.js';
+import { ButtonComponent } from './components/button.component';
+import { LoginService } from './services/login.service';
 
 export let commonNg1Module = angular
   .module('common', [])

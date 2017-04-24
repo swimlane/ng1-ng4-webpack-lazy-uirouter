@@ -1,5 +1,5 @@
 import angular from 'angular';
-import { configState } from './login.state.js';
+import { configState } from './login.state';
 import { commonNg1Module } from '../common';
 
 export default angular

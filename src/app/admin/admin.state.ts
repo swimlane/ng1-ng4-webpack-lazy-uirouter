@@ -1,6 +1,6 @@
-import { AdminComponent } from './admin.component.js';
-import { ResetComponent } from './reset/reset.component.js';
-import { AdminService, LoginService } from 'app/common';
+import { AdminComponent } from './admin.component';
+import { ResetComponent } from './reset/reset.component';
+import { AdminService, LoginService } from '../common';
 import { TransitionService, StateService } from 'ui-router-ng2';
 
 export const ADMIN_STATES = [
