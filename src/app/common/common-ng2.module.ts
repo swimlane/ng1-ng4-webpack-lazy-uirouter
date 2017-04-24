@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { adapter } from '../../adapter';
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 // ng2 services & components
 import { AdminService } from './services/admin.service';
@@ -19,6 +20,7 @@ adapter.upgradeNg1Provider('LoginService', { asToken: LoginService });
 // angular2 common module
 @NgModule({
   providers: [AdminService],
+  imports: [FlexLayoutModule],
   declarations: [ToggleComponent, ng1ButtonComponent],
   exports: [ToggleComponent, ng1ButtonComponent]
 })

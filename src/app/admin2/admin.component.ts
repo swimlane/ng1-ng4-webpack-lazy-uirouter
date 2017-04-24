@@ -33,12 +33,11 @@ import { Component, Input } from '@angular/core';
     </div>
 
     <a href="#" class="button" uiSref="admin.reset">Goto ng2 substate</a>
-    <a href="#" class="button" uiSref="admin2">Goto admin2 state</a>
     <a href="#" class="button" uiSref="login">Goto ng1 page</a>
     <a href="#" class="button" uiSref="login.hello">Goto ng1 substate</a>
   `
 })
-export class AdminComponent {
+export class Admin2Component {
 
   @Input() geo = '';
   @Input() profile = '';
