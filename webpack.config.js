@@ -77,14 +77,12 @@ let webpackConfig = {
         test: /\.js$/,
         loader: 'babel-loader',
         exclude: /(node_modules)/
-      }
+      },
       */
       {
         test: /\.js$|\.ts$/,
-        loaders: [
-          'awesome-typescript-loader'
-        ],
-        exclude: [/\.(spec|e2e|d)\.ts$/]
+        loader: 'awesome-typescript-loader',
+        exclude: /(node_modules)/
       }
     ]
   },
