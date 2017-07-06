@@ -1,4 +1,4 @@
-import { adapter } from 'adapter';
+import { HybridHelper } from '../../hybrid-helper';
 
 // ng2 services & components
 import { AdminService } from './services/admin.service';
@@ -11,7 +11,11 @@ import { LoginService } from './services/login.service';
 export let commonNg1Module = angular
   .module('common', [])
   .factory('LoginService', LoginService)
-  .factory('AdminService', adapter.downgradeNg2Provider(AdminService))
   .component('coolButton', ButtonComponent)
-  // downgrades must use `directive`
-  .directive('coolToggle', adapter.downgradeNg2Component(ToggleComponent))
+
+HybridHelper.downgradeProvider(commonNg1Module.name, 'AdminService', AdminService);
+
+HybridHelper.downgradeComponent(commonNg1Module.name, 'coolToggle', ToggleComponent, {
+  inputs: ['age'],
+  outputs: []
+});

@@ -13,6 +13,3 @@ import '@angular/router';
 
 // lazy stuff
 import 'ocLazyLoad';
-
-// routing
-import 'ui-router-ng1-to-ng2';

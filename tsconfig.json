@@ -27,7 +27,7 @@
   },
   "files": [
     "src/declarations.d.ts",
-    "src/bootstrap.js"
+    "src/bootstrap.ts"
   ],
   "exclude": [
     "node_modules"

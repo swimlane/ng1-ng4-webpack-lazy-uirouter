@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
+  selector: 'admin',
   template: `
     <h1>{{title}}</h1>
 
@@ -35,6 +36,10 @@ export class AdminComponent {
 
   age1 = 11;
   age2 = 22;
+
+  constructor(){
+    console.log('IN COMPONENT');
+  }
 
   get geoFormatted() {
     return JSON.stringify(this.geo, null, 4);

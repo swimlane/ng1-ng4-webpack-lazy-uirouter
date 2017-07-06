@@ -24,7 +24,7 @@ let webpackConfig = {
     'source-map',
 
   entry: {
-    app: './src/bootstrap.js',
+    app: './src/bootstrap.ts',
     vendor: './src/vendor.js',
     polyfills: './src/polyfills.js'
   },
@@ -38,7 +38,7 @@ let webpackConfig = {
 
   devServer: {
     historyApiFallback: true,
-    port: 9999,
+    port: 9997,
     stats: {
       modules: false,
       cached: false,
@@ -60,7 +60,7 @@ let webpackConfig = {
     alias: {
       // 'angular-ui-router': 'angular-ui-router/release/angular-ui-router.js',
       // 'ui-router-ng2': 'ui-router-ng2/_bundles/ui-router-ng2.js',
-      'ui-router-ng1-to-ng2': 'ui-router-ng1-to-ng2/ng1-to-ng2.js'
+      // 'ui-router-ng1-to-ng2': 'ui-router-ng1-to-ng2/ng1-to-ng2.js'
     }
   },
 
