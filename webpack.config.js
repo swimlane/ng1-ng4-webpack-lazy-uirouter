@@ -81,8 +81,27 @@ let webpackConfig = {
       */
       {
         test: /\.js$|\.ts$/,
-        loader: 'awesome-typescript-loader',
+        use: [
+          {
+            loader: 'angular2-template-loader'
+          },
+          {
+            loader: 'awesome-typescript-loader',
+          }
+        ],
         exclude: /(node_modules)/
+      },
+      {
+        test: /\.css$/,
+        use: ['to-string-loader', 'css-loader']
+      },
+      {
+        test: /\.scss$/,
+        use: ['to-string-loader', 'css-loader', 'sass-loader']
+      },
+      {
+        test: /\.html$/,
+        use: 'raw-loader'
       }
     ]
   },
