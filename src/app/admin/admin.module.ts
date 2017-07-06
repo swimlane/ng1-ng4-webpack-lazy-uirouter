@@ -16,4 +16,4 @@ import { AdminService } from '../common/services/admin.service';
   declarations: [AdminComponent, ResetComponent],
   providers: [AdminService]
 })
-export default class AdminModule { }
+export class AdminModule { }

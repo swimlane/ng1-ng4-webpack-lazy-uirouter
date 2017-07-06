@@ -1,14 +1,12 @@
 import * as angular from 'angular';
-import { NgModule } from '@angular/core';
+import { NgModule, NgModuleFactoryLoader, SystemJsNgModuleLoader } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { UpgradeModule } from '@angular/upgrade/static';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UIRouterModule } from '@uirouter/angular';
 import { UIRouterUpgradeModule } from '@uirouter/angular-hybrid';
 import { CommonNg2Module } from './app/common/common-ng2.module';
-// import LoginModule from './app/login/login.module';
 import { HybridHelper } from './hybrid-helper';
-import AdminModule from './app/admin/admin.module';
 
 // entry components
 import { ToggleComponent } from './app/common/components/toggle.component';
@@ -22,9 +20,11 @@ import { AdminComponent } from './app/admin/admin.component';
     UpgradeModule,
     UIRouterModule,
     UIRouterUpgradeModule,
-    CommonNg2Module,
-    AdminModule
+    CommonNg2Module
   ],
+  providers: [
+    // { provide: NgModuleFactoryLoader, useClass: SystemJsNgModuleLoader }
+  ]
 })
 export class AppModule {
   ngDoBootstrap() {}

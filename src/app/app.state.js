@@ -9,6 +9,6 @@ export const MAIN_STATES = [
   {
     name: 'admin.**',
     url: '/admin',
-    loadChildren: () => System.import('app/admin/admin.module').then(m => m.default)
+    loadChildren: () => System.import('app/admin/admin.module').then(m => m.AdminModule)
   }
 ];

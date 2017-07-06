@@ -1,12 +1,14 @@
 import angular from 'angular';
 import { configRouting } from '../utils/config-routing';
 import { commonNg1Module } from './common/common-ng1.module';
-import {visualizer} from "@uirouter/visualizer";
+import { visualizer } from "@uirouter/visualizer";
+import uiRouter from "@uirouter/angularjs";
+import { upgradeModule } from "@uirouter/angular-hybrid";
 
 const appModule = angular
   .module('app', [
-    'ui.router',
-    // 'ui.router.upgrade',
+    uiRouter,
+    upgradeModule.name,
     'oc.lazyLoad',
     commonNg1Module.name
   ])
